@@ -1,4 +1,4 @@
-package com.carrental.rental;
+package com.carrental.booking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-public class RentalApplication {
+public class BookingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RentalApplication.class, args);
+        SpringApplication.run(BookingApplication.class, args);
     }
 
 }
