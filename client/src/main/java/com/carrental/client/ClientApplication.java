@@ -1,13 +1,13 @@
-package com.carrental.front;
+package com.carrental.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FrontApplication {
+public class ClientApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FrontApplication.class, args);
+        SpringApplication.run(ClientApplication.class, args);
     }
 
 }

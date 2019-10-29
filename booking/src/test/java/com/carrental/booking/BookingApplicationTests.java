@@ -1,10 +1,10 @@
-package com.carrental.front;
+package com.carrental.booking;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FrontApplicationTests {
+class BookingApplicationTests {
 
     @Test
     void contextLoads() {
