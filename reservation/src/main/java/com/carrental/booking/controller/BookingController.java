@@ -14,7 +14,7 @@ public class BookingController {
     @Autowired
     private BookingDAO bookingDAO;
 
-    @RequestMapping(value = {"/create/"}, method = RequestMethod.POST)
+    @RequestMapping(value = {"/create"}, method = RequestMethod.POST)
     public void bookingCreate(@RequestBody Booking booking) {
         bookingDAO.save(booking);
     }
