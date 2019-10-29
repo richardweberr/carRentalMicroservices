@@ -24,5 +24,6 @@ public interface BookingDAO extends JpaRepository<Booking, Integer> {
 
     @Override
     void deleteById(Integer integer);
+
 }
 

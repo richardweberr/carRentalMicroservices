@@ -4,6 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+//http://localhost:8030/swagger-ui.html
+
 @SpringBootApplication
 @EnableSwagger2
 public class BookingApplication {
