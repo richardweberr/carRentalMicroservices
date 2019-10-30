@@ -14,41 +14,31 @@ public class CarController {
     @Autowired
     private carDao carDao;
 
-
     @GetMapping(value = "cars")
-
     public List<Car> carList() {
-
         return carDao.findAll();
     }
 
-
     @GetMapping(value = "cars/{id}")
     public Car showCar(@PathVariable int id) {
-
         return carDao.findById(id);
     }
 
     @PostMapping("cars")
     public void addCar(@RequestBody Car car) {
         carDao.save(car);
-
     }
 
     @DeleteMapping("car/{id}")
     public List<Car> deleteCar(@PathVariable int id) {
         carDao.deleteById(id);
         return carDao.findAll();
-
     }
-
 
     @PutMapping("cars")
     public void modifyCar(@RequestBody Car car) {
         carDao.deleteById(car.getId());
         carDao.save(car);
-
     }
-
 
 }

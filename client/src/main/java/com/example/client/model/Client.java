@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Entity
-@Table(name="client")
+@Table(name = "client")
 public class Client {
     @Id
     @GeneratedValue
@@ -16,22 +16,18 @@ public class Client {
     private String prenom;
     private Date date_naissance;
     private int numero_permis;
-
-
-
     private Date date_obtention_permis;
 
-    public Client(int id, String nom, String prenom, Date date_naissance, int numero_permis, Date date_obtention_permis){
+    public Client(int id, String nom, String prenom, Date date_naissance, int numero_permis, Date date_obtention_permis) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.date_naissance = date_naissance;
         this.numero_permis = numero_permis;
         this.date_obtention_permis = date_obtention_permis;
-
     }
-    public Client(){
 
+    public Client() {
     }
 
     public int getId() {

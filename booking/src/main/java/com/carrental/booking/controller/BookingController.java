@@ -41,13 +41,13 @@ public class BookingController {
 //        return bookingDAO.findById(id);
 
     @ApiOperation(value = "list all bookings")
-    @RequestMapping(value = {"/updateBooking"}, method = RequestMethod.PUT)
+    @RequestMapping(value = {"/bookingUpdate"}, method = RequestMethod.PUT)
     public Booking bookingEdit(@RequestBody Booking booking) {
         bookingDAO.save(booking);
         return booking;
     }
 
-    @RequestMapping(value = {"/deleteBooking/{id}"}, method = RequestMethod.DELETE)
+    @RequestMapping(value = {"/bookingDelete/{id}"}, method = RequestMethod.DELETE)
     public void bookingDelete(@PathVariable int id) {
         bookingDAO.deleteById(id);
     }
