@@ -1,5 +1,6 @@
 package com.carrental.rental.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Booking {
@@ -7,8 +8,8 @@ public class Booking {
     private int booking_id;
     private int car_id;
     private int client_id;
-    private Date date_start;
-    private Date date_end;
+    private LocalDate date_start;
+    private LocalDate date_end;
     private int distance_estimated;
     private int distance_performed;
 
@@ -36,19 +37,19 @@ public class Booking {
         this.client_id = client_id;
     }
 
-    public Date getDate_start() {
+    public LocalDate getDate_start() {
         return date_start;
     }
 
-    public void setDate_start(Date date_start) {
+    public void setDate_start(LocalDate date_start) {
         this.date_start = date_start;
     }
 
-    public Date getDate_end() {
+    public LocalDate getDate_end() {
         return date_end;
     }
 
-    public void setDate_end(Date date_end) {
+    public void setDate_end(LocalDate date_end) {
         this.date_end = date_end;
     }
 

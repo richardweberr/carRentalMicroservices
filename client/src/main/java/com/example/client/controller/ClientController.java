@@ -13,30 +13,30 @@ public class ClientController {
     @Autowired
     private clientDao clientDao;
 
-    @GetMapping(value = "Clients")
+    @GetMapping(value = "clients")
     public List<Client> clientList() {
         return clientDao.findAll();
     }
-    
-    @GetMapping(value = "Clients/{id}")
-    public Client afficherClient(@PathVariable int id) {
+
+    @GetMapping(value = "client/{id}")
+    public Client showClient(@PathVariable int id) {
         return clientDao.findById(id);
     }
 
-    @PostMapping("Clients")
+    @PostMapping("client")
     public void addClient(@RequestBody Client client) {
         clientDao.save(client);
     }
 
-    @DeleteMapping("Clients/{id}")
+    @PutMapping("client")
+    public void modifyClient(@RequestBody Client client) {
+        clientDao.deleteById(client.getId());
+        clientDao.save(client);
+    }
+
+    @DeleteMapping("client/{id}")
     public List<Client> deleteClient(@PathVariable int id) {
         clientDao.deleteById(id);
         return clientDao.findAll();
-    }
-
-    @PutMapping("Clients")
-    public void modifyclient(@RequestBody Client client) {
-        clientDao.deleteById(client.getId());
-        clientDao.save(client);
     }
 }

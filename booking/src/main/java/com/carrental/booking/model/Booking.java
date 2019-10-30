@@ -1,7 +1,14 @@
 package com.carrental.booking.model;
 
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,29 +19,14 @@ public class Booking {
     private int booking_id;
     private int car_id;
     private int client_id;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date date_start;
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date date_end;
     private int distance_estimated;
     private int distance_performed;
 
     public Booking() {
-    }
-
-    public Booking(int client_id, Date date_start, Date date_end, int distance_estimated, int distance_performed) {
-        this.client_id = client_id;
-        this.date_start = date_start;
-        this.date_end = date_end;
-        this.distance_estimated = distance_estimated;
-        this.distance_performed = distance_performed;
-    }
-
-    public Booking(int car_id, int client_id, Date date_start, Date date_end, int distance_estimated, int distance_performed) {
-        this.car_id = car_id;
-        this.client_id = client_id;
-        this.date_start = date_start;
-        this.date_end = date_end;
-        this.distance_estimated = distance_estimated;
-        this.distance_performed = distance_performed;
     }
 
     public int getBooking_id() {

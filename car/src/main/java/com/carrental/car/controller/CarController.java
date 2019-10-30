@@ -19,7 +19,7 @@ public class CarController {
         return carDao.findAll();
     }
 
-    @GetMapping(value = "cars/{id}")
+    @GetMapping(value = "car/{id}")
     public Car showCar(@PathVariable int id) {
         return carDao.findById(id);
     }
@@ -29,16 +29,14 @@ public class CarController {
         carDao.save(car);
     }
 
+    @PutMapping("car")
+    public void modifyCar(@RequestBody Car car) {
+        carDao.save(car);
+    }
+
     @DeleteMapping("car/{id}")
     public List<Car> deleteCar(@PathVariable int id) {
         carDao.deleteById(id);
         return carDao.findAll();
     }
-
-    @PutMapping("cars")
-    public void modifyCar(@RequestBody Car car) {
-        carDao.deleteById(car.getId());
-        carDao.save(car);
-    }
-
 }

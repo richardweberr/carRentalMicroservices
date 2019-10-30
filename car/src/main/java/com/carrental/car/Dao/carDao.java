@@ -12,6 +12,7 @@ import java.util.List;
 public interface carDao extends JpaRepository<Car, Integer> {
         Car findById(int id);
         Car deleteById(int id);
+
 }
 //public interface carDao {
 //    public List<Car>findAll();

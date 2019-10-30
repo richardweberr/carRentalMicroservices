@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@Api(description = "CRUD to booking DB")
+@Api(tags = "CRUD to booking DB")
 @RestController
 public class BookingController {
 
@@ -20,6 +20,7 @@ public class BookingController {
     @ApiOperation(value = "create new booking")
     @RequestMapping(value = {"/bookingCreate"}, method = RequestMethod.POST)
     public void bookingCreate(@RequestBody Booking booking) {
+        System.out.println(booking.getDate_start());
         bookingDAO.save(booking);
     }
 
@@ -35,12 +36,7 @@ public class BookingController {
         return bookingDAO.findById(id);
     }
 
-//    @ApiOperation(value = "show show list of booked cars for ")
-//    @RequestMapping(value = {"/booking/{id}"}, method = RequestMethod.GET)
-//    public Optional<Booking> bookingOne(@PathVariable int id) {
-//        return bookingDAO.findById(id);
-
-    @ApiOperation(value = "list all bookings")
+    @ApiOperation(value = "modify a booking")
     @RequestMapping(value = {"/bookingUpdate"}, method = RequestMethod.PUT)
     public Booking bookingEdit(@RequestBody Booking booking) {
         bookingDAO.save(booking);

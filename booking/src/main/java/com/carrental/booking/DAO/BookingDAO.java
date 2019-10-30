@@ -10,6 +10,8 @@ import java.util.Optional;
 @Repository
 public interface BookingDAO extends JpaRepository<Booking, Integer> {
 
+//    List<Booking> findAllByBooking_idAfter10AndBooking_idBefore35
+
     @Override
     List<Booking> findAll();
 
