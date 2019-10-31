@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rachid - JAVA on WEB</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+
+<header class="fixed-top navbar-light bg-header">
+    <a class="navbar-brand text-white arialblack" href="#"><h1>CAR RENTAL</h1></a>
+    <nav class="navbar navbar-light bg-nav">
+        <p class="navbar-text text-white">The best rental car service in the world !</p>
+    </nav>
+</header>
+
+
+<div class="container">
+
+    <div class="row .row-eq-height top-bottom-mrg">
+
+        <div class="col-sm-12 bg-lightgrey">
+            <div id="someData">
+                <div id='list'>
+                    <table class="table">
+                        <thead class="thead-light">
+                        <tr>
+                            <!--<th scope="col">ID</th>-->
+                            <th scope="col">Marque <i id="nameSorter" class="pl-1 fas fa-sort-down align-top"></i></th>
+                            <th scope="col">Modèle <i id="dateSorter" class="pl-1 fas fa-sort-down align-top"></i></th>
+                            <th scope="col">Couleur</th>
+                            <th scope="col">Immatriculation</th>
+                            <th scope="col">Prix</th>
+                            <th scope="col">Tarif au Km</th>
+                            <th scope="col">Image</th>
+                        </tr>
+                        </thead>
+                        <tbody id="table">
+                            <tr th:each ="car : ${cars}">
+                                <td th:utext="${cars.marque}">...</td>
+                                <td th:utext="${cars.modele}">...</td>
+                                <td th:utext="${cars.couleur}">...</td>
+                                <td th:utext="${cars.immatriculation}">...</td>
+                                <td th:utext="${cars.prix}">...</td>
+                                <td th:utext="${cars.tarif_km}">...</td>
+                                <td th:utext="${cars.image_url}">...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script th:src="@{https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js}"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script th:src="@{https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js}" type="text/javascript"></script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script th:src="@{https://kit.fontawesome.com/fccb28bd22.js}"></script>
+
+
+
+
+</body>
+</html>
