@@ -2,15 +2,23 @@ package com.carrental.rental.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 
 public class RequestForCar {
-    @JsonFormat(pattern="yyyy-MM-dd")
+    private int clientAge;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date date_start;
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date date_end;
+
+    public int getClientAge() {
+        return clientAge;
+    }
+
+    public void setClientAge(int clientAge) {
+        this.clientAge = clientAge;
+    }
 
     public Date getDate_start() {
         return date_start;
