@@ -23,7 +23,6 @@ public class MainController {
 
     @PostMapping(value = { "/chocolat" }) // Routing POST sur l'url /chocolat
     public String saveCar(Model model, @RequestBody RequestForCar requestForCar) { // instanciation d'un nouveau Model controlleur
-
         RestTemplate restTemplate = new RestTemplate();
         Car cars = restTemplate.postForObject("http://localhost:8040/rentalAvailability", requestForCar, Car.class);
         model.addAttribute("cars", cars);
